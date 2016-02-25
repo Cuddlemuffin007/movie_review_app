@@ -45,3 +45,6 @@ class Rating(models.Model):
     movie = models.ForeignKey(Movie)
     rating = models.IntegerField()
     timestamp = models.IntegerField()
+
+    def __str__(self):
+        return '*'*self.rating
