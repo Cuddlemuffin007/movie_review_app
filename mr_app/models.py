@@ -35,9 +35,10 @@ class Movie(models.Model):
     thriller = models.BooleanField(default=0)
     war = models.BooleanField(default=0)
     western = models.BooleanField(default=0)
+    avg_rating = models.FloatField()
 
     def __str__(self):
-        return self.title
+        return "{}".format(self.title)
 
 
 class Rating(models.Model):
@@ -47,4 +48,4 @@ class Rating(models.Model):
     timestamp = models.IntegerField()
 
     def __str__(self):
-        return '*'*self.rating
+        return "{} {}".format(self.movie, self.rating)

@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Index HTML{% endblock %}
+{% block title %}Top 20{% endblock %}
 
 {% block content %}
-hello from index template
+hello from index template<br>
+    {% for movie in top20 %}
+        {{ movie.title }} {{ movie.avg_rating }}<br>
+    {% endfor %}
 {% endblock %}
