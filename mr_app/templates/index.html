@@ -4,18 +4,19 @@
 
 {% block content %}
     <h1 id="top_movies">Top 20 Movies</h1>
-    <div class="row">
+    <div class="row header">
         <div class="col-md-4">Movie</div>
         <div class="col-md-4">Release Date</div>
         <div class="col-md-4">Average Rating</div>
     </div>
     {% for movie in top20 %}
-        <a href={{ movie.pk }}>
+        <a href="movies/{{ movie.pk }}">
             <div class="row movies">
-                <div class="col-md-4 movie_title">{{ movie }}</div>
+                <a href="movies/{{ movie.pk }}">
+                    <div class="col-md-4 movie_title">{{ movie }}</div>
+                </a>
                 <div class="col-md-4">{{ movie.release_date }}</div>
                 <div class="col-md-4">{{ movie.avg_rating}}</div>
             </div>
-        </a>
     {% endfor %}
 {% endblock %}

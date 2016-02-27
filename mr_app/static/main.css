@@ -1,18 +1,35 @@
-#top_movies {
+#top_movies, #user, #movie{
     text-align: center;
     font-family: sans-serif;
     padding-bottom: 1em;
 }
 
 .row {
+    margin: 0 auto;
     text-align: center;
     padding: 5px 0;
+    width: 70%;
+}
+
+.raters {
+    text-align: left;
 }
 
 .content:last-child {
     margin-bottom: 3em;
 }
 
-.movie_title {
+.movie_title, .rater_name {
     text-align: left;
+}
+
+.nav {
+    padding: 2em 0;
+    position: fixed;
+}
+
+.row.header {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
 }

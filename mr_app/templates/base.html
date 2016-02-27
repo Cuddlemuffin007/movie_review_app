@@ -9,8 +9,11 @@
     <link href="{% static 'main.css' %}" rel="stylesheet">
 </head>
 <body>
-Hello from base.html
 <div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="/">Home</a></li>
+        <li role="presentation"><a href="http://www.imdb.com">IMDB</a></li>
+    </ul>
     <div class="content">
         {% block content %}{% endblock %}
     </div>

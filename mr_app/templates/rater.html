@@ -3,15 +3,15 @@
 {% block title %}Rater Page{% endblock %}
 
 {% block content %}
-    <h1>User: {{ rater }} {{ rater.occupation }}</h1>
-    <div class="row">
-        <div class="col-md-6">Movie</div>
+    <h1 id="user">User: {{ rater }} {{ rater.occupation }}</h1>
+    <div class="row header">
+        <div class="col-md-6 movie_title">Movie</div>
         <div class="col-md-6">Rating</div>
     </div>
     <div>
         {% for movie in rater_movies %}
-            <div class="row movies">
-                <a href="/{{ movie.movie.pk }}"><div class="col-md-6 movie_title">{{ movie.movie.title }}</div></a>
+            <div class="row">
+                <a href="/movies/{{ movie.movie.pk }}"><div class="col-md-6 movie_title">{{ movie.movie.title }}</div></a>
                 <div class="col-md-6">{{ movie.rating }}</div>
             </div>
         {% endfor %}

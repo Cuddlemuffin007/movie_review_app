@@ -3,11 +3,22 @@
 {% block title %}Movie Page{% endblock %}
 
 {% block content %}
-    <div><a href={{ movie.url }}>{{ movie.title }}</a> Average Rating: {{ movie.avg_rating }}</div>
-    {% for rating in ratings %}
-        <div>
-            <a href="rater/{{ rating.rater.pk }}">User: {{ rating.rater }}</a><br>
-            Rating: {{ rating.rating }}
-        </div><br>
-    {% endfor %}
+    <h1 id="movie">
+        <a href={{ movie.url }}>{{ movie.title }}</a>
+        <br>
+        <small>Average Rating: {{ movie.avg_rating }}</small>
+    </h1>
+
+  <div class="row header">
+        <div class="col-md-6 rater_name">User</div>
+        <div class="col-md-6">Rating</div>
+    </div>
+    <div>
+        {% for rating in ratings %}
+            <div class="row">
+                <div class="col-md-6 rater_name"><a href="/rater/{{ rating.rater.pk }}">{{ rating.rater }}</a></div>
+                <div class="col-md-6">{{ rating.rating }}</div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
