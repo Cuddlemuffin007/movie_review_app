@@ -8,7 +8,7 @@ class Rater(models.Model):
     zipcode = models.CharField(max_length=5)
 
     def __str__(self):
-        return str(self.zipcode)
+        return "User {} {}{}".format(self.pk, self.age, self.sex)
 
 
 class Movie(models.Model):
@@ -38,7 +38,7 @@ class Movie(models.Model):
     avg_rating = models.FloatField()
 
     def __str__(self):
-        return "{}".format(self.title)
+        return "{}".format(self.title[:-7])
 
 
 class Rating(models.Model):
@@ -48,4 +48,4 @@ class Rating(models.Model):
     timestamp = models.IntegerField()
 
     def __str__(self):
-        return "{} {}".format(self.movie, self.rating)
+        return "{} Rating: {}".format(self.rater, self.rating)

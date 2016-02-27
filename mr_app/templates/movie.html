@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Movie Page{% endblock %}
+
+{% block content %}
+    <div><a href={{ movie.url }}>{{ movie.title }}</a> Average Rating: {{ movie.avg_rating }}</div>
+    {% for rating in ratings %}
+        <div>
+            {{ rating.rater }}<br>
+            Rating: {{ rating.rating }}
+        </div><br>
+    {% endfor %}
+{% endblock %}

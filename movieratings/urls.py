@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from mr_app.views import index_view
+from mr_app.views import index_view, movie_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index_view)
+    url(r'^$', index_view),
+    url(r'^(\d+)$', movie_view)
 ]
