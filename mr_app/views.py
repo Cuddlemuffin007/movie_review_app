@@ -11,6 +11,16 @@ def movie_view(request, re_capture):
     movie = Movie.objects.get(pk=re_capture)
     movie_ratings = Rating.objects.filter(movie=movie.pk)
 
-    return render(request, 'movie.html', {'movie': movie,
-                                          'ratings': movie_ratings
-                                          })
+    return render(request, 'movie.html', {
+                                        'movie': movie,
+                                        'ratings': movie_ratings
+    })
+
+def rater_view(request, re_capture):
+    rater = Rater.objects.get(pk=re_capture)
+    rater_movies = Rating.objects.filter(rater=rater.pk)
+
+    return render(request, 'rater.html', {
+                                        'rater': rater,
+                                        'rater_movies' : rater_movies
+    })

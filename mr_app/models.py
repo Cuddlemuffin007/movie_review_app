@@ -8,7 +8,7 @@ class Rater(models.Model):
     zipcode = models.CharField(max_length=5)
 
     def __str__(self):
-        return "User {} {}{}".format(self.pk, self.age, self.sex)
+        return "{} {}{}".format(self.pk, self.age, self.sex)
 
 
 class Movie(models.Model):

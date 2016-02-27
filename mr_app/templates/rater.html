@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Rater Page{% endblock %}
+
+{% block content %}
+    <h1>User: {{ rater }} {{ rater.occupation }}</h1>
+    <div class="row">
+        <div class="col-md-6">Movie</div>
+        <div class="col-md-6">Rating</div>
+    </div>
+    <div>
+        {% for movie in rater_movies %}
+            <div class="row movies">
+                <a href="/{{ movie.movie.pk }}"><div class="col-md-6 movie_title">{{ movie.movie.title }}</div></a>
+                <div class="col-md-6">{{ movie.rating }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

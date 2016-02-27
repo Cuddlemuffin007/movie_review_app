@@ -6,7 +6,7 @@
     <div><a href={{ movie.url }}>{{ movie.title }}</a> Average Rating: {{ movie.avg_rating }}</div>
     {% for rating in ratings %}
         <div>
-            {{ rating.rater }}<br>
+            <a href="rater/{{ rating.rater.pk }}">User: {{ rating.rater }}</a><br>
             Rating: {{ rating.rating }}
         </div><br>
     {% endfor %}
