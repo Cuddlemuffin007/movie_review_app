@@ -35,7 +35,7 @@ class Movie(models.Model):
     thriller = models.BooleanField(default=0)
     war = models.BooleanField(default=0)
     western = models.BooleanField(default=0)
-    avg_rating = models.FloatField()
+    avg_rating = models.DecimalField(default=0, decimal_places=1, max_digits=3)
 
     def __str__(self):
         return "{}".format(self.title[:-7])
