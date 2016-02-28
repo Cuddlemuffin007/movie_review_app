@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Top 20{% endblock %}
+{% block title %}All Movies{% endblock %}
 
 {% block content %}
-    <h1 id="top_movies">Top 20 Movies</h1>
+    <h1 id="top_movies">All Movies</h1>
     <div class="row header">
         <div class="col-md-4 movie_title">Movie</div>
         <div class="col-md-4">Release Date</div>
         <div class="col-md-4">Average Rating</div>
     </div>
-    {% for movie in top20 %}
+    {% for movie in all_movies %}
         <div class="row movies">
             <a href="movies/{{ movie.pk }}">
                 <div class="col-md-4 movie_title">{{ movie }}</div>

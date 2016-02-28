@@ -8,8 +8,22 @@
         <br>
         <small>Average Rating: {{ movie.avg_rating }}</small>
     </h1>
-
-  <div class="row header">
+    <div class="panel-body">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <label>
+                    Add your rating:
+                    <input type="text" class="form-control" placeholder="Enter 1-5" id="rating" name="rating">
+                </label>
+            </div>
+            <br>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="row header">
         <div class="col-md-6 rater_name">User</div>
         <div class="col-md-6">Rating</div>
     </div>

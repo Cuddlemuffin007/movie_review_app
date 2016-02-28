@@ -23,13 +23,13 @@
     text-align: left;
 }
 
-.nav {
-    padding: 2em 0;
-    position: fixed;
-}
-
 .row.header {
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     font-size: large;
     font-weight: bold;
+}
+
+.panel-body {
+    width: 50%;
+    margin: 15px auto;
 }
