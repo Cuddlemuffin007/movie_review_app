@@ -11,7 +11,7 @@ def index_view(request):
 
 def movie_view(request, re_capture):
     movie = Movie.objects.get(pk=re_capture)
-    rater = Rater.objects.get(pk=944)
+    rater = Rater.objects.get(pk=0)
     rating = request.POST.get('rating')
 
     if rating and not Rating.objects.filter(movie=movie, rater=rater):

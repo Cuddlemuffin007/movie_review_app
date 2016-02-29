@@ -1,4 +1,4 @@
-#top_movies, #user, #movie{
+#top_movies, #rater, #movie{
     text-align: center;
     font-family: sans-serif;
     padding-bottom: 1em;
@@ -9,10 +9,6 @@
     text-align: center;
     padding: 5px 0;
     width: 70%;
-}
-
-.raters {
-    text-align: left;
 }
 
 .content:last-child {
