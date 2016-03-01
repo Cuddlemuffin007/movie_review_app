@@ -11,7 +11,7 @@
     </div>
     {% for movie in all_movies %}
         <div class="row movies">
-            <a href="movies/{{ movie.pk }}">
+            <a href="{% url 'movie_view' movie.pk %}">
                 <div class="col-md-4 movie_title">{{ movie }}</div>
             </a>
             <div class="col-md-4">{{ movie.release_date }}</div>

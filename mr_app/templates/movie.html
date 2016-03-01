@@ -30,7 +30,7 @@
     <div>
         {% for rating in ratings %}
             <div class="row">
-                <div class="col-md-6 rater_name"><a href="/rater/{{ rating.rater.pk }}">{{ rating.rater }}</a></div>
+                <div class="col-md-6 rater_name"><a href="{% url 'rater_view' rating.rater.pk %}">{{ rating.rater }}</a></div>
                 <div class="col-md-6">{{ rating.rating }}</div>
             </div>
         {% endfor %}

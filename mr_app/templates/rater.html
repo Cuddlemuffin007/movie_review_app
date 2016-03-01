@@ -11,7 +11,7 @@
     <div>
         {% for movie in rater_movies %}
             <div class="row">
-                <a href="/movies/{{ movie.movie.pk }}"><div class="col-md-6 movie_title">{{ movie.movie.title }}</div></a>
+                <a href="{% url 'movie_view' movie.pk %}"><div class="col-md-6 movie_title">{{ movie.movie.title }}</div></a>
                 <div class="col-md-6">{{ movie.rating }}</div>
             </div>
         {% endfor %}

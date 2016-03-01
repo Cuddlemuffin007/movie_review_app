@@ -11,8 +11,8 @@
 <body>
 <div class="container">
     <ul class="nav nav-pills">
-        <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation"><a href="/all">All Movies</a></li>
+        <li role="presentation"><a href="{% url 'index_view' %}">Home</a></li>
+        <li role="presentation"><a href="{% url 'all_movies' %}">All Movies</a></li>
         <li role="presentation"><a href="http://www.imdb.com">IMDB</a></li>
     </ul>
     <div class="content">
