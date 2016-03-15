@@ -67,10 +67,10 @@ def movie_api_view(request):
 
 def rater_api_view(request):
     if request.method == 'POST':
-        age = request.POST['age']
-        occupation = request.POST['occupation']
-        zipcode = request.POST['zipcode']
-        sex = request.POST['sex']
+        age = request.POST.get('age')
+        occupation = request.POST.get('occupation')
+        zipcode = request.POST.get('zipcode')
+        sex = request.POST.get('sex')
         new_rater = Rater.objects.create(age=age, occupation=occupation,
                                          zipcode=zipcode, sex=sex)
         new_rater_dict = model_to_dict(new_rater)
@@ -95,6 +95,13 @@ def rating_api_view(request):
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 def specific_movie_api_view(request, pk):
+    if request.method == 'PATCH':
+        pass
+
+    elif request.method == 'DELETE':
+        movie = Movie.objects.get(pk=pk)
+        movie.delete()
+
     data = list(Movie.objects.filter(pk=pk).values())
     return HttpResponse(json.dumps(data), content_type='application/json')
 
