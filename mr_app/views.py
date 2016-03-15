@@ -106,10 +106,18 @@ def specific_movie_api_view(request, pk):
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 def specific_rater_api_view(request, pk):
+    if request.method == 'DELETE':
+        rater = Rater.objects.get(pk=pk)
+        rater.delete()
+
     data = list(Rater.objects.filter(pk=pk).values())
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 def specific_rating_api_view(request, pk):
+    if request.method == 'DELETE':
+        rating = Rating.objects.get(pk=pk)
+        rating.delete()
+
     data = list(Rating.objects.filter(pk=pk).values())
     return HttpResponse(json.dumps(data), content_type='application/json')
 
